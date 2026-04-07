@@ -1,1 +1,478 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* ===================== Global Dark Theme ===================== */
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* ===================== Global Dark Theme ===================== */
+:root {
+  --bg: #0f172a;
+  --surface: #111827;
+  --surface-2: #0b1220;
+  --border: #1f2937;
+
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+
+  --accent: #3b82f6;
+  --accent-contrast: #ffffff;
+
+  /* feedback */
+  --success: #22c55e;
+  --warn: #f59e0b;
+  --error: #ef4444;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Images & links */
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar (WebKit) */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* ===================== Angular Material ===================== */
+
+/* Toolbar */
+.mat-toolbar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Cards */
+.mat-mdc-card {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+}
+
+/* Menus, Select panel, Autocomplete */
+.mat-mdc-menu-panel,
+.mat-mdc-select-panel,
+.mat-mdc-autocomplete-panel {
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+}
+.mat-mdc-option {
+  color: var(--text) !important;
+}
+.mat-mdc-option .mdc-list-item__primary-text {
+  color: var(--text) !important;
+}
+.mat-mdc-option.mdc-list-item--selected {
+  background: rgba(59, 130, 246, 0.15) !important;
+  color: #fff !important;
+}
+.mat-mdc-option.mdc-list-item--selected .mdc-list-item__primary-text {
+  color: #fff !important;
+}
+.mat-mdc-option:hover {
+  background: #1f2937 !important;
+}
+.mat-mdc-option.mat-mdc-option-active {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Dialogs / Bottom sheets / Sidenav */
+.mdc-dialog__surface,
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+}
+.mat-drawer,
+.mat-sidenav {
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border-right: 1px solid var(--border);
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+/* Form fields (outline style) */
+.mat-mdc-form-field .mat-mdc-input-element {
+  color: var(--text) !important;
+  caret-color: var(--accent);
+}
+.mat-mdc-form-field .mdc-text-field__input::placeholder {
+  color: var(--muted) !important;
+}
+.mat-mdc-form-field .mat-mdc-input-element:disabled {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Textarea */
+.mat-mdc-form-field textarea.mat-mdc-input-element {
+  color: var(--text) !important;
+}
+
+/* Select field text */
+.mat-mdc-select-value,
+.mat-mdc-select-value-text,
+.mat-mdc-select-value-text span {
+  color: var(--text) !important;
+}
+.mat-mdc-select-placeholder {
+  color: var(--muted) !important;
+}
+.mat-mdc-select-arrow {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Multiple select chips */
+.mat-mdc-select-value .mat-mdc-chip {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #fff !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Labels */
+.mat-mdc-form-field .mat-mdc-floating-label {
+  color: var(--muted) !important;
+}
+.mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: var(--accent) !important;
+}
+
+/* Outline */
+.mdc-text-field--outlined .mdc-notched-outline__leading,
+.mdc-text-field--outlined .mdc-notched-outline__notch,
+.mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+.mdc-text-field--focused .mdc-notched-outline__leading,
+.mdc-text-field--focused .mdc-notched-outline__notch,
+.mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: var(--accent) !important;
+}
+
+/* Checkbox / Radio / Toggle */
+.mdc-checkbox--selected .mdc-checkbox__background {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+.mdc-radio--checked .mdc-radio__inner-circle {
+  border-color: var(--accent) !important;
+}
+.mat-mdc-slide-toggle.mat-accent .mdc-switch__track {
+  background: rgba(59, 130, 246, 0.35) !important;
+}
+
+/* Buttons */
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button {
+  background: #1f2937 !important;
+  color: #fff !important;
+}
+.mat-mdc-raised-button.mat-primary {
+  background: var(--accent) !important;
+}
+
+/* Table */
+.mat-mdc-table {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Chips */
+.mat-mdc-chip {
+  background: rgba(59, 130, 246, 0.15) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  color: #fff !important;
+}
+
+/* Tabs */
+.mat-mdc-tab .mdc-tab__text-label {
+  color: var(--muted);
+}
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: #fff;
+}
+
+/* Snackbar */
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: var(--surface-2);
+  --mdc-snackbar-supporting-text-color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Tooltip */
+.mdc-tooltip__surface {
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+}
+
+/* Utility */
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.surface-2 {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+/* Inputs fix */
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+/* styles.scss */
+:root {
+  --mat-menu-container-color: rgba(11, 18, 32, 0.98);
+  --mat-menu-item-label-text-color: #e5e7eb;
+}
+
+/* Make all player buttons show a hand cursor and be clickable */
+.ui button,
+.ui [mat-icon-button],
+.ui .mini,
+.ui .play,
+.ui .ghost {
+  cursor: pointer !important;
+  pointer-events: auto;
+}
+
+/* Video Player Dialog - Fullscreen */
+.video-player-dialog .mat-mdc-dialog-container,
+.video-player-dialog .mat-mdc-dialog-surface,
+.video-player-dialog .mdc-dialog__surface {
+  padding: 0 !important;
+  background: #000 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Custom Confirmation Dialog */
+.custom-dialog-container .mat-mdc-dialog-container {
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.custom-dialog-container .mdc-dialog__surface {
+  background: transparent !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7) !important;
+}
+
+.custom-dialog-container .cdk-overlay-backdrop {
+  background: rgba(2, 6, 23, 0.85) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Notifications */
+.mat-mdc-snack-bar-container {
+  margin: 24px !important;
+  --mdc-snackbar-container-shape: 12px;
+}
+
+/* Base notification styles */
+.notification-success .mdc-snackbar__surface,
+.notification-error .mdc-snackbar__surface,
+.notification-warning .mdc-snackbar__surface,
+.notification-info .mdc-snackbar__surface,
+.notification-success .mat-mdc-snack-bar-container .mdc-snackbar__surface,
+.notification-error .mat-mdc-snack-bar-container .mdc-snackbar__surface,
+.notification-warning .mat-mdc-snack-bar-container .mdc-snackbar__surface,
+.notification-info .mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  min-width: 400px !important;
+  max-width: 600px !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  animation: slideInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* SUCCESS */
+.notification-success .mdc-snackbar__surface {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.95), rgba(22, 163, 74, 0.95)) !important;
+  box-shadow:
+    0 8px 32px rgba(34, 197, 94, 0.35),
+    0 0 0 1px rgba(34, 197, 94, 0.2) !important;
+}
+
+/* ERROR (ajustado para padrão moderno) */
+.notification-error .mdc-snackbar__surface {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(185, 28, 28, 0.95)) !important;
+  box-shadow:
+    0 8px 32px rgba(239, 68, 68, 0.4),
+    0 0 0 1px rgba(239, 68, 68, 0.25) !important;
+}
+
+/* WARNING */
+.notification-warning .mdc-snackbar__surface {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.95), rgba(217, 119, 6, 0.95)) !important;
+  box-shadow:
+    0 8px 32px rgba(245, 158, 11, 0.35),
+    0 0 0 1px rgba(245, 158, 11, 0.2) !important;
+}
+
+/* INFO (azul consistente com theme) */
+.notification-info .mdc-snackbar__surface {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95)) !important;
+  box-shadow:
+    0 8px 32px rgba(59, 130, 246, 0.35),
+    0 0 0 1px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Icons */
+.notification-success .mdc-snackbar__surface::before,
+.notification-error .mdc-snackbar__surface::before,
+.notification-warning .mdc-snackbar__surface::before,
+.notification-info .mdc-snackbar__surface::before {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.notification-success .mdc-snackbar__surface::before {
+  content: '✓';
+}
+.notification-error .mdc-snackbar__surface::before {
+  content: '✕';
+}
+.notification-warning .mdc-snackbar__surface::before {
+  content: '⚠';
+}
+.notification-info .mdc-snackbar__surface::before {
+  content: 'ℹ';
+}
+
+/* Label */
+.notification-success .mdc-snackbar__label,
+.notification-error .mdc-snackbar__label,
+.notification-warning .mdc-snackbar__label,
+.notification-info .mdc-snackbar__label {
+  padding: 20px 24px 20px 68px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  color: #fff !important;
+}
+
+/* Action */
+.notification-success .mat-mdc-snack-bar-action,
+.notification-error .mat-mdc-snack-bar-action,
+.notification-warning .mat-mdc-snack-bar-action,
+.notification-info .mat-mdc-snack-bar-action {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  padding: 8px 16px !important;
+  margin-right: 12px !important;
+  border-radius: 6px !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.mat-mdc-snack-bar-action:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .notification-success .mdc-snackbar__surface,
+  .notification-error .mdc-snackbar__surface,
+  .notification-warning .mdc-snackbar__surface,
+  .notification-info .mdc-snackbar__surface {
+    min-width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  .mat-mdc-snack-bar-container {
+    margin: 16px !important;
+  }
+}
