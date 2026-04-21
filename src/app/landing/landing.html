@@ -36,3 +36,18 @@
     </form>
   </section>
 </div>
+
+<section class="reasons-wrap">
+  <h2 class="row-title">Why You Should Choose JavaFlix</h2>
+
+  <div class="reason-grid">
+    <mat-card class="reason-card" *ngFor="let reason of reasons">
+      <h3>{{ reason.title }}</h3>
+      <p>{{ reason.text }}</p>
+
+      <div class="badge">
+        <mat-icon>{{ reason.icon }}</mat-icon>
+      </div>
+    </mat-card>
+  </div>
+</section>
