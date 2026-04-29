@@ -1,11 +1,22 @@
+:host {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --card: #111827;
+  --border: #1f2937;
+  --accent: #3b82f6;
+}
+
 .landing-container {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100dvh;
-  width: 100vw;
+  width: 100%;
   position: relative;
   overflow: hidden;
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Background */
@@ -32,96 +43,221 @@
   z-index: 2;
   padding: 18px 32px;
   background: transparent;
+  display: flex;
+  align-items: center;
+}
 
-  .brand-text {
-    font-size: 28px;
-    font-weight: 900;
-    color: #3b82f6;
-    letter-spacing: -0.5px;
-  }
+.topbar .brand-text {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
 
-  .spacer {
-    flex: 1;
-  }
+.topbar .spacer {
+  flex: 1;
+}
 
-  .lang-btn {
-    margin-right: 12px;
-    background: rgba(15, 23, 42, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #e5e7eb;
-    border-radius: 6px;
-    padding: 4px 10px;
-    line-height: 24px;
+.topbar .lang-btn {
+  margin-right: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 10px;
+  line-height: 24px;
+}
 
-    .mat-icon {
-      font-size: 20px;
-      height: 20px;
-      width: 20px;
-    }
-  }
+.topbar .lang-btn .mat-icon {
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+}
 
-  .signin-btn {
-    background: #3b82f6 !important;
-    color: #ffffff !important;
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-weight: 600;
-    transition: all 0.2s ease;
+.topbar .signin-btn {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
 
-    &:hover {
-      background: #2563eb !important;
-    }
-  }
+.topbar .signin-btn:hover {
+  background: #2563eb !important;
 }
 
 /* Hero section */
 .hero {
   position: relative;
   z-index: 2;
-  margin: 0 auto;
-  padding: clamp(40px, 9vh, 96px) 24px 48px;
+  width: 100%;
+  padding: clamp(48px, 12vh, 120px) 24px;
   text-align: center;
   max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-title {
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.5px;
   font-size: clamp(32px, 6.5vw, 64px);
-  margin: 24px 0 12px;
-  color: #f9fafb; /* leve destaque no título */
+  margin: 12px 0 16px;
+  color: #f9fafb;
+  max-width: 1100px;
 }
 
 .hero-subtitle {
   font-weight: 600;
-  font-size: clamp(16px, 2.4vw, 24px);
-  margin: 8px 0 16px;
+  font-size: clamp(16px, 2.2vw, 22px);
+  margin: 8px 0 12px;
   color: #d1d5db;
 }
 
 .hero-caption {
-  color: #9ca3af;
+  color: var(--muted);
   font-size: clamp(14px, 1.6vw, 18px);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 /* CTA */
-.cta .cta-btn {
-  background: #3b82f6 !important;
+.cta {
+  --field-radius: 10px;
+  --field-height: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
 }
+
+.cta .cta-btn {
+  background: var(--accent) !important;
+}
+
 .cta .cta-btn:hover:not(:disabled) {
   background: #2563eb !important;
 }
 
+.cta .email-field {
+  min-width: 260px;
+  max-width: 520px;
+  width: 100%;
+}
+
+/* Form visuals */
+.email-field {
+}
+
+.email-field {
+  max-width: 420px;
+}
+
+.email-field .mat-form-field-infix {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--field-radius);
+  padding: 6px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition:
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  height: var(--field-height);
+  display: flex;
+  align-items: center;
+}
+
+.email-field .mat-form-field-label {
+  color: rgba(229, 231, 235, 0.9);
+  font-weight: 600;
+}
+
+input.mat-input-element {
+  color: var(--text);
+  padding: 8px 4px;
+  height: auto;
+  line-height: 1.2;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make the input fill the infix height and remove extra vertical padding */
+.email-field .mat-form-field-infix .mat-form-field-flex {
+  height: 100%;
+  align-items: center;
+}
+
+.email-field input.mat-input-element {
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Align suffix icon vertically and reduce its size to match visual scale */
+.email-field .mat-form-field-suffix .mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+  line-height: 18px;
+  opacity: 0.9;
+}
+
+/* Ensure CTA button and field baseline match exactly */
+.cta .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-field.mat-focused .mat-form-field-infix,
+.email-field.mat-form-field-should-float .mat-form-field-infix {
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.08);
+}
+
+.cta .cta-btn {
+  padding: 6px 12px;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--field-radius);
+  height: var(--field-height);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.24);
+}
+
+.cta .cta-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Ensure form stacks nicely on small screens */
+@media (max-width: 640px) {
+  .cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta .email-field {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Tokens */
-:host {
-  --bg: #0f172a;
-  --card: #111827;
-  --cardElev: #0b1220;
-  --border: #1f2937;
-  --muted: #9ca3af;
-  --accent: #3b82f6;
-  color: #e5e7eb;
+/* Cards, tokens and utilities preserved */
+.thumb-strip::-webkit-scrollbar-thumb {
+  background: #1f2937;
 }
 
 /* Scroll */
@@ -134,6 +270,7 @@
   background: var(--card);
   border: 1px solid var(--border);
 }
+
 .trend-card:hover {
   border-color: #374151;
 }
@@ -148,50 +285,196 @@
 
 /* Reason */
 .reason-card {
-  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.5);
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
+
 .reason-card .badge {
-  background: #111827;
+  background: var(--card);
   border: 1px solid #374151;
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 8px;
+}
+
+/* Reasons grid */
+.reasons-wrap {
+  padding: 48px 18px;
+  background: transparent;
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 20px auto 0;
 }
 
 /* FAQ */
+.faq {
+  padding: 36px 18px;
+}
+
+.faq-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .faq-item {
-  background: #111827 !important;
+  background: var(--card) !important;
   border: 1px solid #020617;
   box-shadow: inset 0 -4px #020617;
 }
+
 .faq-item:hover,
 .faq-item.mat-expanded {
   background: #1f2937 !important;
 }
+
 .faq-item .answer {
-  background: #111827;
-  color: #9ca3af;
-  border-top: 1px solid #020617;
+  background: transparent;
+  color: var(--muted);
+  border-top: 1px solid rgba(2, 6, 23, 0.7);
+  padding: 16px 18px 22px 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  transition:
+    opacity 0.18s ease,
+    transform 0.22s ease;
+  will-change: opacity, transform;
+}
+
+/* Ensure Material expansion body spacing matches our answer box */
+.mat-expansion-panel-body {
+  padding: 0;
+}
+
+.faq-item .answer p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.faq-item .answer a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Subtle fade for the body content when expanding */
+.mat-expansion-panel-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mat-expansion-panel.mat-expanded .mat-expansion-panel-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accordion header improvements */
+.faq-accordion .mat-expansion-panel-header {
+  padding: 12px 16px;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-accordion .question {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.faq-accordion .spacer {
+  flex: 1 1 auto;
+}
+
+.toggle-icon {
+  color: var(--muted);
+  transition:
+    transform 0.18s ease,
+    color 0.18s ease;
+  font-size: 20px;
+}
+
+.mat-expansion-panel.mat-expanded .toggle-icon {
+  color: var(--text);
+  transform: rotate(90deg);
 }
 
 /* Footer */
 .site-footer {
   background: #020617;
   border-top: 1px solid #1f2937;
-  color: #9ca3af;
+  color: var(--muted);
+  padding: 28px 18px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .footer-links a {
-  color: #9ca3af;
+  color: var(--muted);
 }
+
 .footer-links a:hover {
-  color: #e5e7eb;
+  color: var(--text);
 }
 
 /* Logo */
 .logo-icon {
-  color: #3b82f6;
+  color: var(--accent);
 }
 
 .logo-text {
-  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: clamp(24px, 10vw, 36px);
+  }
+
+  .cta .email-field {
+    width: 100%;
+  }
+
+  .topbar {
+    padding: 12px 16px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Ensure material outline visuals follow the same radius */
+.email-field .mat-form-field-appearance-outline .mat-form-field-outline,
+.email-field .mat-form-field-appearance-outline .mat-form-field-outline-start,
+.email-field .mat-form-field-appearance-outline .mat-form-field-outline-end,
+.email-field .mat-form-field-appearance-outline .mat-form-field-outline-gap {
+  border-radius: var(--field-radius);
+  overflow: hidden;
 }
